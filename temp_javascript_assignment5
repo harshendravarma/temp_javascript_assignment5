@@ -1,0 +1,78 @@
+var temp,humidity;
+/*array of object */
+var arr=[{temp:70,humidity:45},
+    {temp:70,humidity:45},
+    {temp:80,humidity:55},
+    {temp:90,humidity:65},
+    {temp:80,humidity:75},
+    {temp:40,humidity:85},
+]
+// function for maximum temparature
+function max_temp(array1){
+    var max=0;
+    for(var i in array1){
+       
+       
+        if(array1[i].temp>max){
+            
+            max=array1[i].temp;
+        }
+
+    }
+    console.log(max);
+    return max;
+}
+//function for minimum temparatute
+function min_temp(array1){
+    var min=999;
+    for(var i in array1){
+       
+       
+        if(array1[i].temp<min){
+            
+            min=array1[i].temp;
+        }
+
+    }
+    console.log(min);
+    return min;
+}
+//function for mean of all temprature
+function mean_temp(array1){
+var sum=0;
+var mean;
+for(i in array1){
+    sum =sum+array1[i].temp;    
+}
+ mean=sum/array1.length;
+ console.log(mean);
+return mean;
+}
+// function for mode of all temparatures
+function mode_temp(array1){
+    var mode;
+    var dict={}
+    for(var i in array1) {
+        if (dict[array1[i].temp])
+          dict[array1[i].temp] = dict[array1[i].temp] + 1;
+        else
+          dict[array1[i].temp] = 1;
+      }
+      console.log(dict);
+      var max_f=0;
+      for( var key in dict){
+          if(dict[key]>max_f){
+              max_f=dict[key];
+              mode=key;
+          }
+      }
+      console.log(mode);
+return mode;
+}
+
+//list of function calls
+max_temp(arr);
+min_temp(arr);
+mean_temp(arr);
+mode_temp(arr);
+insert_array(arr,30,20);
